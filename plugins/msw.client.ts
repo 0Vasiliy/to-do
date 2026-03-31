@@ -10,6 +10,9 @@ export default defineNuxtPlugin(async () => {
 
   await worker.start({
     onUnhandledRequest: 'bypass',
+    serviceWorker: {
+      url: `${runtimeConfig.app.baseURL}mockServiceWorker.js`,
+    },
   })
 })
 
