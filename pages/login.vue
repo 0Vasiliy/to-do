@@ -34,7 +34,7 @@
         </button>
 
         <div class="hint">
-          Тестовые пользователи: <b>admin@test.com</b> / <b>123456</b>, <b>user@test.com</b> / <b>123456</b>
+          Тестовые пользователи: <b>admin@test.com</b> / <b>123456</b>, <b>user@test.com</b> / <b>123456</b> <b>vasiliy@test.com</b> / <b>123456</b>
         </div>
       </form>
     </div>
