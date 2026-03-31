@@ -1274,6 +1274,33 @@ onMounted(fetchTasks)
   .author-role {
     max-width: 100%;
   }
+
+  .modal-overlay {
+    padding: 10px;
+    place-items: end center;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: calc(100vh - 20px);
+    overflow: hidden;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .modal-body {
+    max-height: calc(100vh - 20px - 56px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (min-width: 721px) {
