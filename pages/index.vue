@@ -121,6 +121,7 @@
               @click="selectTask(t.Id)"
             >
               <div class="cell checkbox-col" @click.stop>
+                <div class="cell-label">Статус</div>
                 <input
                   type="checkbox"
                   class="checkbox"
@@ -131,20 +132,24 @@
               </div>
 
               <div class="cell title-col">
+                <div class="cell-label">Название</div>
                 {{ t.Title }}
               </div>
 
               <div class="cell prio-col">
+                <div class="cell-label">Приоритет</div>
                 <span class="badge" :class="t.IsCompleted ? 'badge-soft' : 'badge-important'">
                   {{ t.IsCompleted ? 'Обычный' : 'Важно' }}
                 </span>
               </div>
 
               <div class="cell date-col">
+                <div class="cell-label">Дата</div>
                 {{ formatDate(t.DueDate) }}
               </div>
 
               <div class="cell author-col">
+                <div class="cell-label">Автор</div>
                 <div class="author">
                   <span class="avatar" aria-hidden="true">
                     {{ authorById(t.CreatedBy).initials }}
@@ -157,6 +162,7 @@
               </div>
 
               <div class="cell actions-col" @click.stop>
+                <div class="cell-label">Действия</div>
                 <button
                   v-if="canEdit(t)"
                   class="link-btn"
@@ -1195,6 +1201,84 @@ onMounted(fetchTasks)
   }
   .meta-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 14px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .topbar-right .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .selects {
+    flex-direction: column;
+  }
+
+  .list-header {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px 10px;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .cell {
+    display: grid;
+    gap: 6px;
+  }
+
+  .actions-col {
+    justify-self: stretch;
+  }
+
+  .cell-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .author-role {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 721px) {
+  .cell-label {
+    display: none;
   }
 }
 </style>

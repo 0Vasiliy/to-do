@@ -89,6 +89,7 @@ async function onSubmit() {
 
 .login-card {
   width: 420px;
+  max-width: 100%;
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
@@ -178,6 +179,18 @@ async function onSubmit() {
   font-size: 12px;
   color: #6b7280;
   margin-top: 2px;
+}
+
+@media (max-width: 420px) {
+  .login-wrap {
+    padding: 14px;
+  }
+  .login-card {
+    padding: 16px;
+  }
+  .login-title {
+    font-size: 18px;
+  }
 }
 </style>
 
